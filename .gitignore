@@ -1,0 +1,5 @@
+cmake-build-debug
+.idea
+objects
+checker
+push_swap
