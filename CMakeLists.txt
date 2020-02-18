@@ -20,5 +20,5 @@ add_executable(push_swap sources/push_swap.c)
 target_link_libraries(push_swap ft)
 
 
-add_executable(checker sources/checker.c sources/stack.c)
+add_executable(checker sources/checker.c sources/stack.c sources/validate.c)
 target_link_libraries(checker ft)

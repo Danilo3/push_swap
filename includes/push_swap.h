@@ -23,6 +23,12 @@ typedef struct			s_stack
 	size_t				size;
 }						t_stack;
 
+typedef enum			e_sort_order
+{
+	DESCENDING,
+	ASCENDING
+}						t_sort_order;
+
 void					init_stack(t_stack *stack);
 
 void					print_values(t_stack *a_stack, t_stack *b_stack);
@@ -30,6 +36,10 @@ void					print_values(t_stack *a_stack, t_stack *b_stack);
 void					add_to_stack(t_stack *stack, int value);
 
 void					free_stack(t_stack *stack);
+
+int						check_dup(t_stack *stack);
+
+int						check_is_sorted(t_stack *stack, t_sort_order order);
 
 
 #endif //PUSH_SWAP_PUSH_SWAP_H

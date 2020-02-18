@@ -21,6 +21,7 @@ int ft_isnum(const char *s)
 	return (0);
 }
 
+
 int main(int argc, char **argv)
 {
 	int i;
@@ -37,10 +38,17 @@ int main(int argc, char **argv)
 	{
 		v = ft_isnum(argv[i]);
 		add_to_stack(&stack_a, v);
-		//ft_printf("%d\n", v);
 		i++;
 	}
+	if (check_dup(&stack_a))
+	{
+		free_stack(&stack_a);
+		free_stack(&stack_b);
+		ft_exit(NULL, "Error\n");
+	}
 	print_values(&stack_a, &stack_b);
+//	if (check_is_sorted(&stack_a, DESCENDING))
+//		ft_printf("Stack a is sorted");
 	free_stack(&stack_a);
 	free_stack(&stack_b);
 }
