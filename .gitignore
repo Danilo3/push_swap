@@ -3,3 +3,4 @@ cmake-build-debug
 objects
 checker
 push_swap
+*.a
