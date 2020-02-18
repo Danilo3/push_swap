@@ -26,15 +26,19 @@ int main(int argc, char **argv)
 	int i;
 	int v;
 	t_stack stack_a;
+	t_stack stack_b;
 
 	i = 1;
 	init_stack(&stack_a);
+	init_stack(&stack_b);
 	if (argc == 1)
 		ft_exit(NULL, "Error\n");
 	while(i < argc)
 	{
 		v = ft_isnum(argv[i]);
-		ft_printf("%d\n", v);
+		add_to_stack(&stack_a, v);
+		//ft_printf("%d\n", v);
 		i++;
 	}
+	print_values(&stack_a, &stack_b);
 }

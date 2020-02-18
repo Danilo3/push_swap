@@ -14,8 +14,48 @@ void init_stack(t_stack *stack)
 
 void	add_to_stack(t_stack *stack, int value)
 {
-	stack->head->prev = (t_stack_elem*)malloc(sizeof(t_stack_elem));
-	stack->head->prev->value = value;
-	stack->head->prev->next = stack->head;
-	stack->head->prev->prev = NULL;
+	t_stack_elem *new;
+	t_stack_elem *last;
+
+	new = stack->head;
+	last = new;
+	while (new)
+	{
+		last = new;
+		new = new->next;
+	}
+	new = (t_stack_elem*)malloc(sizeof(t_stack_elem));
+	new->value = value;
+	new->next = last;
+	new->prev = NULL;
+	stack->head->next = new;
+}
+
+void	print_values(t_stack *a_stack, t_stack *b_stack)
+{
+	t_stack_elem *a;
+	t_stack_elem *b;
+
+	a = a_stack->head;
+	b = b_stack->head;
+	while (a || b)
+	{
+		if (a && b)
+		{
+			ft_printf("%d\t%d\n", a->value, b->value);
+			a = a->next;
+			b = b->next;
+		}
+		else if (a)
+		{
+			ft_printf("%d\t\n", a->value);
+			a = a->next;
+		}
+		else if (b)
+		{
+			ft_printf("\t\t%d\n", b->value);
+			b = b->next;
+		}
+	}
+	ft_printf("-\t-\na\tb\n");
 }
