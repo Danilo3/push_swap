@@ -6,6 +6,7 @@ set(CMAKE_C_FLAGS  "-Wall -Wextra -Werror")
 
 include_directories(libft/includes)
 include_directories(libft/ft_printf/includes)
+include_directories(includes)
 
 # Libft with printf
 file(GLOB_RECURSE LIBFT_FILES "${PROJECT_SOURCE_DIR}/libft/ft_*.c")
@@ -17,3 +18,7 @@ add_library(ft STATIC ${LIBFT_FILES})
 
 add_executable(push_swap sources/push_swap.c)
 target_link_libraries(push_swap ft)
+
+
+add_executable(checker sources/checker.c sources/stack.c)
+target_link_libraries(checker ft)

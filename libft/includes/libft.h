@@ -190,6 +190,7 @@ char			*ft_itoa_base(int value, char *buffer, int base, char a);
 char			*ft_lltoa_base(long long ll, char *str, int base, char a);
 char			*ft_uitoa_base(unsigned int v, char *buf, int b, char a);
 char			*ft_ulltoa_base(t_ull ull, char *str, int base, char a);
+long			ft_atol(const char *str);
 
 /*
  ** Convert structs
