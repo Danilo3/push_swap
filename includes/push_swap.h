@@ -29,4 +29,7 @@ void					print_values(t_stack *a_stack, t_stack *b_stack);
 
 void					add_to_stack(t_stack *stack, int value);
 
+void					free_stack(t_stack *stack);
+
+
 #endif //PUSH_SWAP_PUSH_SWAP_H

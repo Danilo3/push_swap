@@ -20,16 +20,30 @@ void	add_to_stack(t_stack *stack, int value)
 	new = stack->head;
 	last = new;
 	while (new)
-	{
-		last = new;
 		new = new->next;
-	}
 	new = (t_stack_elem*)malloc(sizeof(t_stack_elem));
 	new->value = value;
 	new->next = last;
 	new->prev = NULL;
-	stack->head->next = new;
+	stack->head = new;
 }
+
+
+void free_stack(t_stack *stack)
+{
+	t_stack_elem *e;
+	t_stack_elem *next;
+
+	e = stack->head;
+	while (e)
+	{
+		next = e->next;
+		free(e);
+		e = next;
+	}
+}
+
+
 
 void	print_values(t_stack *a_stack, t_stack *b_stack)
 {

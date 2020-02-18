@@ -41,4 +41,6 @@ int main(int argc, char **argv)
 		i++;
 	}
 	print_values(&stack_a, &stack_b);
+	free_stack(&stack_a);
+	free_stack(&stack_b);
 }
