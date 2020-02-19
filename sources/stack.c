@@ -44,31 +44,36 @@ void free_stack(t_stack *stack)
 	}
 }
 
-void	print_values(t_stack *a_stack, t_stack *b_stack)
+void	print_values(t_stack *a_stack, t_stack *b_stack, const char *cmd)
 {
 	t_stack_elem *a;
 	t_stack_elem *b;
 
 	a = a_stack->head;
 	b = b_stack->head;
+	if (!cmd)
+		ft_printf("Init a and b: \n");
+	else
+		ft_printf("Exec: %s\n", cmd);
+	ft_printf("------A-----+-----B------\n");
 	while (a || b)
 	{
 		if (a && b)
 		{
-			ft_printf("%d\t%d\n", a->value, b->value);
+			ft_printf("|%11d|%11d|\n", a->value, b->value);
 			a = a->next;
 			b = b->next;
 		}
 		else if (a)
 		{
-			ft_printf("%d\t\n", a->value);
+			ft_printf("|%11d|           |\n", a->value);
 			a = a->next;
 		}
 		else if (b)
 		{
-			ft_printf("\t%d\n", b->value);
+			ft_printf("|          |%11d|\n", b->value);
 			b = b->next;
 		}
 	}
-	ft_printf("-\t-\na\tb\n");
+	ft_printf("------------+------------\n");
 }

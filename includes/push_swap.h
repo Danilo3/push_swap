@@ -45,7 +45,7 @@ typedef struct			s_command_list
 
 void					init_stack(t_stack *stack);
 
-void					print_values(t_stack *a_stack, t_stack *b_stack);
+void					print_values(t_stack *a_stack, t_stack *b_stack, const char *cmd);
 
 void					add_to_stack(t_stack *stack, int value);
 
