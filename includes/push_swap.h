@@ -65,6 +65,13 @@ void					print_commands(t_command_list *list);
 
 int 					push_x(t_stack *stack_a, t_stack *stack_b, t_command_list *list, const char *name);
 
+int 					rotate_x(t_stack *stack, t_command_list *list, const char *name);
+
+int 					reverse_rotate_x(t_stack *stack, t_command_list *list, const char *name);
+
+int						reverse_rotate_rotate(t_stack *stack_a, t_stack *stack_b, t_command_list *list);
+
+
 
 
 #endif //PUSH_SWAP_PUSH_SWAP_H

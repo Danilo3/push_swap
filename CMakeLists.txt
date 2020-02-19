@@ -24,7 +24,8 @@ set(SRC sources/stack.c
         sources/command.c
         sources/basic_ops.c
         sources/basic_ops.c
-        sources/solution.c)
+        sources/solution.c
+        sources/rotate_ops.c)
 
 add_executable(checker ${SRC} sources/checker.c)
 target_link_libraries(checker ft)

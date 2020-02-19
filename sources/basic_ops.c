@@ -28,26 +28,6 @@ int		swap_swap(t_stack* stack_a, t_stack *stack_b, t_command_list *list)
 	return (1);
 }
 
-int 	push_a(t_stack *stack_a, t_stack *stack_b, t_command_list *list)
-{
-	t_stack_elem	*elem_a;
-	t_stack_elem	*temp;
-	t_stack_elem	*temp2;
-
-	if (stack_b->size == 0)
-		return (0);
-	elem_a = stack_a->head;
-	temp = stack_b->head->next;
-	stack_b->head = elem_a;
-	temp2 = elem_a->next;
-	elem_a->next = temp;
-	stack_a->head = temp2;
-	add_command(list, "pa");
-	return (1);
-}
-
-
-
 int 	push_x(t_stack *stack_a, t_stack *stack_b, t_command_list *list, const char *name)
 {
 	t_stack_elem	*temp;
