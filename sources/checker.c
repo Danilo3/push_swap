@@ -49,6 +49,7 @@ int main(int argc, char **argv)
 	print_values(&stack_a, &stack_b);
 //	if (check_is_sorted(&stack_a, DESCENDING))
 //		ft_printf("Stack a is sorted");
+	solve(&stack_a, &stack_b);
 	free_stack(&stack_a);
 	free_stack(&stack_b);
 }

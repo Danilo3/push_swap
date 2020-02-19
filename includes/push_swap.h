@@ -29,6 +29,20 @@ typedef enum			e_sort_order
 	ASCENDING
 }						t_sort_order;
 
+typedef struct			s_command
+{
+	char				*name;
+	struct s_command	*next;
+
+}						t_command;
+
+typedef struct			s_command_list
+{
+	t_command			*head;
+	size_t				size;
+
+}						t_command_list;
+
 void					init_stack(t_stack *stack);
 
 void					print_values(t_stack *a_stack, t_stack *b_stack);
@@ -40,6 +54,15 @@ void					free_stack(t_stack *stack);
 int						check_dup(t_stack *stack);
 
 int						check_is_sorted(t_stack *stack, t_sort_order order);
+
+void					add_command(t_command_list *list, const char *name);
+
+int						swap_x(t_stack *stack, t_command_list *list, const char *name);
+
+int						solve(t_stack *a_stack, t_stack *b_stack);
+
+void					print_commands(t_command_list *list);
+
 
 
 #endif //PUSH_SWAP_PUSH_SWAP_H

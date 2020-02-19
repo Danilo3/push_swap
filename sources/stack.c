@@ -26,6 +26,7 @@ void	add_to_stack(t_stack *stack, int value)
 	new->next = last;
 	new->prev = NULL;
 	stack->head = new;
+	stack->size++;
 }
 
 
@@ -42,8 +43,6 @@ void free_stack(t_stack *stack)
 		e = next;
 	}
 }
-
-
 
 void	print_values(t_stack *a_stack, t_stack *b_stack)
 {

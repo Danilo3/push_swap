@@ -19,6 +19,13 @@ add_library(ft STATIC ${LIBFT_FILES})
 add_executable(push_swap sources/push_swap.c)
 target_link_libraries(push_swap ft)
 
+set(SRC sources/stack.c
+        sources/validate.c
+        sources/command.c
+        sources/basic_ops.c
+        sources/basic_ops.c
+        sources/solution.c)
 
-add_executable(checker sources/checker.c sources/stack.c sources/validate.c)
+add_executable(checker ${SRC} sources/checker.c)
 target_link_libraries(checker ft)
+
