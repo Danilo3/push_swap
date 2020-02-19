@@ -66,7 +66,7 @@ void	print_values(t_stack *a_stack, t_stack *b_stack)
 		}
 		else if (b)
 		{
-			ft_printf("\t\t%d\n", b->value);
+			ft_printf("\t%d\n", b->value);
 			b = b->next;
 		}
 	}

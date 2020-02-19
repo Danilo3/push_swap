@@ -63,6 +63,8 @@ int						solve(t_stack *a_stack, t_stack *b_stack);
 
 void					print_commands(t_command_list *list);
 
+int 					push_x(t_stack *stack_a, t_stack *stack_b, t_command_list *list, const char *name);
+
 
 
 #endif //PUSH_SWAP_PUSH_SWAP_H

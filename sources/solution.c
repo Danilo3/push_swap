@@ -8,8 +8,11 @@ int		solve(t_stack *stack_a, t_stack *stack_b)
 {
 	t_command_list list;
 
-	swap_x(stack_a, &list, "sa");
-	swap_x(stack_b, &list, "sb");
+	list.head = NULL;
+
+	push_x(stack_a, stack_b, &list, "pb");
+	push_x(stack_a, stack_b, &list, "pb");
+	print_values(stack_a, stack_b);
 	print_commands(&list);
 	return (0);
 }
