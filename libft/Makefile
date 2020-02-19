@@ -146,7 +146,8 @@ LIBFT_ADD_SRC = ./ft_math/ft_ispsqrt.c \
                 ./ft_convert/ft_lltoa_base.c \
                 ./ft_convert/ft_uitoa_base.c \
                 ./ft_convert/ft_ulltoa_base.c \
-                ./ft_convert.ft_atol.c
+                ./ft_convert.ft_atol.c  \
+                ./ft_gnl/get_next_line.c
 
 PRINTF_SRC_DIR = ./ft_printf/srcs/
 

@@ -7,6 +7,10 @@
 
 #include "libft.h"
 
+#define MAX_CMD 11
+
+static	char *g_commands[MAX_CMD] = {"sa", "sb", "ss", "pa", "pb", "ra", "rb", "rr", "rra", "rrb", "rrr"};
+
 typedef struct			s_stack_elem
 {
 	int					value;
@@ -59,6 +63,8 @@ void					add_command(t_command_list *list, const char *name);
 
 int						swap_x(t_stack *stack, t_command_list *list, const char *name);
 
+int						swap_swap(t_stack* stack_a, t_stack *stack_b, t_command_list *list);
+
 int						solve(t_stack *a_stack, t_stack *b_stack);
 
 void					print_commands(t_command_list *list);
@@ -67,9 +73,13 @@ int 					push_x(t_stack *stack_a, t_stack *stack_b, t_command_list *list, const 
 
 int 					rotate_x(t_stack *stack, t_command_list *list, const char *name);
 
+int						rotate_rotate(t_stack *stack_a, t_stack *stack_b, t_command_list *list);
+
 int 					reverse_rotate_x(t_stack *stack, t_command_list *list, const char *name);
 
 int						reverse_rotate_rotate(t_stack *stack_a, t_stack *stack_b, t_command_list *list);
+
+int						exec_commands(t_stack *stack_a, t_stack *stack_b, t_command_list *list);
 
 
 

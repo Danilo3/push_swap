@@ -10,7 +10,7 @@ void		add_command(t_command_list *list, const char *name)
 	t_command *new;
 	t_command *current;
 
-	if (!name)
+	if (!name || !list)
 		return ;
 	new = (t_command*)malloc(sizeof(t_command));
 	new->name = ft_strdup(name);

@@ -166,14 +166,6 @@ void			ft_free_sqmt(char **mt);
 int				ft_free_mtrx(char **mtrx, size_t n);
 
 /*
- ** get next line
-*/
-
-# define BUFF_SIZE  16
-
-int				get_next_line(const int fd, char **line);
-
-/*
  ** Other
 */
 
@@ -215,5 +207,14 @@ typedef struct	s_ulldiv
 */
 
 int				ft_printf(const char *fmt, ...);
+
+
+/*
+ ** get_next_line
+*/
+
+# define BUFF_SIZE  3
+
+int				get_next_line(const int fd, char **line);
 
 #endif

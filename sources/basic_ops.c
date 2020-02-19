@@ -3,7 +3,6 @@
 //
 
 #include "push_swap.h"
-#include <stdlib.h>
 
 int		swap_x(t_stack *stack, t_command_list *list, const char *name)
 {
@@ -48,15 +47,3 @@ int 	push_x(t_stack *stack_a, t_stack *stack_b, t_command_list *list, const char
 	add_command(list, name);
 	return (1);
 }
-
-//int		pop(t_stack *stack)
-//{
-//	int value;
-//
-//	if (!stack || !stack->head)
-//		return (0);
-//	value = stack->head->value;
-//	stack->head = stack->head->next;
-//	free(stack->head);
-//	return (value);
-//}
