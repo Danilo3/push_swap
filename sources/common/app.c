@@ -50,6 +50,6 @@ void	init_app(t_app *app, int argc, char **argv)
 
 void	run_app(t_app *app)
 {
-	if (!run_commands(app))
+	if (check_is_dup(app->a) || !run_commands(app))
 		exit_app(app, "Error");
 }

@@ -35,8 +35,6 @@ int			parse_options(t_app *app, int argc, char **argv)
 
 	i = 1;
 	options = 0;
-	if (argc == 1)
-		return (0);
 	while (i < argc)
 	{
 		if (ft_isdigit(argv[i][0]))

@@ -25,7 +25,6 @@ set(SRC stack.c
         swap.c
         print.c
         push.c
-        solution.c
         rotate.c
         execute.c
         app.c

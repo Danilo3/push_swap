@@ -66,8 +66,6 @@ void					destroy_app(t_app *app);
 
 t_stack					*init_stack(void);
 
-void					add_values(int argc, char *argv);
-
 void					exit_app(t_app *app, const char *msg);
 
 void					walk_commands(t_command_list *list, t_bool to_print, t_bool to_free);
@@ -95,10 +93,6 @@ void					add_command(t_command_list *list, const char *name);
 int						swap_x(t_stack *stack, t_command_list *list, const char *name);
 
 int						swap_swap(t_stack* stack_a, t_stack *stack_b, t_command_list *list);
-
-int						solve(t_stack *a_stack, t_stack *b_stack);
-
-void					print_commands(t_command_list *list);
 
 int 					push_x(t_stack *stack_a, t_stack *stack_b, t_command_list *list, const char *name);
 
