@@ -22,8 +22,8 @@ target_link_libraries(push_swap ft)
 set(SRC sources/stack.c
         sources/validate.c
         sources/command.c
-        sources/basic_ops.c
-        sources/basic_ops.c
+        sources/swap.c
+        sources/push.c
         sources/solution.c
         sources/rotate_ops.c
         sources/execute.c)
