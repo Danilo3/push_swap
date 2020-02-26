@@ -14,14 +14,14 @@
 
 void		add_sing_and_sp(char *f, t_spec *spec)
 {
-	if (ft_strcmp(f, "inf") == 0 && spec->flags['+'] == TRUE)
+	if (ft_strcmp(f, "inf") == 0 && spec->flags['+'] == true)
 	{
 		ft_strcpy(f, "+inf");
-		if (spec->flags[' '] == TRUE)
+		if (spec->flags[' '] == true)
 			ft_strcpy(f, " +inf");
 		return ;
 	}
-	else if (ft_strcmp(f, "inf") == 0 && spec->flags[' '] == TRUE)
+	else if (ft_strcmp(f, "inf") == 0 && spec->flags[' '] == true)
 		ft_strcpy(f, " inf");
 }
 
@@ -61,7 +61,7 @@ int			print_float_buf(char *f, t_spec *spec)
 		ft_putstr(f + i);
 		i = ft_strlen(f);
 	}
-	if (spec->precision.value == 0 && spec->flags['#'] == TRUE)
+	if (spec->precision.value == 0 && spec->flags['#'] == true)
 	{
 		ft_putchar('.');
 		i++;
@@ -74,7 +74,7 @@ int			print_f_buf(char *f, t_spec *spec, char sign, int is_dot)
 	int i;
 
 	i = 0;
-	if (spec->flags['-'] == TRUE)
+	if (spec->flags['-'] == true)
 	{
 		i += print_sign(sign);
 		i += print_float_buf(f, spec);

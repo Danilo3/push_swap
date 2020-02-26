@@ -14,8 +14,8 @@
 
 int		is_need_wh(const char *buf, t_spec *spec)
 {
-	return (spec->flags[' '] == TRUE
-			&& spec->flags['+'] == FALSE
+	return (spec->flags[' '] == true
+			&& spec->flags['+'] == false
 			&& buf[0] != '-'
 			&& (spec->type == 'd' ||
 				spec->type == 'i' ||
@@ -33,7 +33,7 @@ int		put_sign_prefix(const char *buf, t_spec *spec, char *dest)
 		spec->width.value--;
 		i++;
 	}
-	if (spec->flags['+'] == TRUE && buf[0] != '-')
+	if (spec->flags['+'] == true && buf[0] != '-')
 	{
 		if (spec->type == 'd')
 		{

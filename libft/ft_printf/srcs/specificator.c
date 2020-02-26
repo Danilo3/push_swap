@@ -24,11 +24,11 @@ t_spec	*init_spec(void)
 	new->type = -1;
 	new->size.id = -1;
 	new->width.value = -1;
-	new->width.is_asterisk = FALSE;
+	new->width.is_asterisk = false;
 	new->precision.value = -1;
-	new->precision.is_asterisk = FALSE;
-	new->precision.is_dot = FALSE;
+	new->precision.is_asterisk = false;
+	new->precision.is_dot = false;
 	while (i < MAX_FLAGS)
-		new->flags[i++] = FALSE;
+		new->flags[i++] = false;
 	return (new);
 }

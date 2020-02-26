@@ -35,11 +35,11 @@ static int	print_null_char(t_spec *spec)
 	int i;
 
 	i = 0;
-	if (spec->flags['-'] == FALSE)
+	if (spec->flags['-'] == false)
 		i += fill_null_field(spec);
 	i++;
 	ft_putchar(0);
-	if (spec->flags['-'] == TRUE)
+	if (spec->flags['-'] == true)
 		i += fill_null_field(spec);
 	return (i);
 }

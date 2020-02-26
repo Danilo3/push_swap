@@ -36,8 +36,8 @@ typedef	unsigned long long	t_ull;
 # define ULLONG_MAX_DIGITS 80
 # define FT_LONG_LONG_MIN LONG_LONG_MIN
 
-# define FT_TRUE 1
-# define FT_FALSE 0
+# define FT_true 1
+# define FT_false 0
 
 /*
  ** Part1:

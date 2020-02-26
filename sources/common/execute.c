@@ -39,8 +39,8 @@ int		exec_commands(t_app *app)
 	while (current)
 	{
 		exec(app->a, app->b, current->name);
-		if (app->v_op)
-			print_values(app->a, app->b, current->name);
+		if (app->v_op == true)
+			print_state(app, current->name);
 		current = current->next;
 	}
 	return (check_is_sorted(app->a, ASCENDING) && check_is_empty(app->b));

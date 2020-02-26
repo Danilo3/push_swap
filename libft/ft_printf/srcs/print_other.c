@@ -21,7 +21,7 @@ int		ft_print_empty(t_spec *spec, va_list *args)
 
 char	get_percent_fill_ch(t_spec *spec)
 {
-	if (spec->flags['0'] == TRUE && spec->flags['-'] == FALSE)
+	if (spec->flags['0'] == true && spec->flags['-'] == false)
 		return ('0');
 	else
 		return (' ');
@@ -33,7 +33,7 @@ int		ft_print_percent(t_spec *spec, va_list *args)
 
 	i = 0;
 	(void)(args);
-	if (spec->flags['-'] == TRUE)
+	if (spec->flags['-'] == true)
 	{
 		ft_putchar('%');
 		i++;

@@ -31,22 +31,33 @@ int		parse_arg(t_app *app, char *arg, int *value)
 int			parse_options(t_app *app, int argc, char **argv)
 {
 	int i;
+	int options;
 
 	i = 1;
+	options = 0;
 	if (argc == 1)
 		return (0);
 	while (i < argc)
 	{
+		if (ft_isdigit(argv[i][0]))
+			return (options);
 		if ((ft_strcmp(argv[i], "-vc") == 0) || (ft_strcmp(argv[i], "-cv") == 0))
 		{
 			app->v_op = true;
 			app->c_op = true;
+			return (2);
 		}
 		else if (ft_strcmp(argv[i], "-c") == 0)
+		{
 			app->c_op = true;
+			options++;
+		}
 		else if (ft_strcmp(argv[i], "-v") == 0)
+		{
 			app->v_op = true;
+			options++;
+		}
 		i++;
 	}
-	return (1);
+	return (options);
 }

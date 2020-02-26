@@ -18,24 +18,24 @@ void		fill_spec_from_vargs(t_spec *spec, va_list *vargs)
 {
 	int tmp_width;
 
-	if (spec->width.is_asterisk == TRUE)
+	if (spec->width.is_asterisk == true)
 	{
 		tmp_width = va_arg(*vargs, int);
 		if (spec->width.value == -1)
 			spec->width.value = tmp_width;
 		if (spec->width.value < 0)
 		{
-			spec->flags['-'] = TRUE;
+			spec->flags['-'] = true;
 			spec->width.value = -spec->width.value;
 		}
 	}
-	if (spec->precision.is_asterisk == TRUE)
+	if (spec->precision.is_asterisk == true)
 	{
 		spec->precision.value = va_arg(*vargs, int);
 		if (spec->precision.value < 0)
 		{
 			spec->precision.value = -1;
-			spec->precision.is_dot = FALSE;
+			spec->precision.is_dot = false;
 		}
 		else if (spec->precision.value == 0)
 			spec->precision.value = -1;

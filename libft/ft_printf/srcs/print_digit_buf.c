@@ -62,7 +62,7 @@ int		print_d_buf_left(t_d_pair *p, t_spec *spec, t_put_prefix pp, int is_p)
 	int i;
 
 	i = 0;
-	if (is_p && spec->flags['0'] == TRUE)
+	if (is_p && spec->flags['0'] == true)
 	{
 		if (get_fill_ch(ft_strlen(p->d), spec) == ' ')
 		{
@@ -96,7 +96,7 @@ int		print_d_buf(char *digit, t_spec *spec, t_put_prefix pp)
 	i = 0;
 	is_prefix = check_is_prefix(digit, spec, pp);
 	prepare_pbuf(digit, spec, prefixd, pp);
-	if (spec->flags['-'] == TRUE)
+	if (spec->flags['-'] == true)
 	{
 		if (is_prefix)
 			i += pp(digit, spec, NULL);

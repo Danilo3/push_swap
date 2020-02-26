@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.14)
 project(push_swap C)
 
 set(CMAKE_C_STANDARD 11)
-set(CMAKE_C_FLAGS  "-Wall -Wextra -Werror")
+set(CMAKE_C_FLAGS  "-g -Wall -Wextra -Werror")
 
 include_directories(libft/includes)
 include_directories(libft/ft_printf/includes)
@@ -23,6 +23,7 @@ set(SRC stack.c
         validate.c
         command.c
         swap.c
+        print.c
         push.c
         solution.c
         rotate.c

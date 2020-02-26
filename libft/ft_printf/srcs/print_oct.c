@@ -14,12 +14,12 @@
 
 int		is_oct_prefix(t_spec *spec)
 {
-	return (spec->type == 'o' && spec->flags['#'] == TRUE);
+	return (spec->type == 'o' && spec->flags['#'] == true);
 }
 
 int		put_oct_prefix(const char *buf, t_spec *spec, char *dest)
 {
-	if (spec->flags['#'] == TRUE && buf[0] != '0')
+	if (spec->flags['#'] == true && buf[0] != '0')
 	{
 		if (spec->type == 'o')
 		{

@@ -29,8 +29,8 @@ int			run_commands(t_app *app)
 {
 	char		*cmd;
 
-	if (app->v_op)
-		print_values(app->a, app->b, NULL);
+	if (app->v_op == true)
+		print_state(app, NULL);
 	while (get_next_line(0, &cmd) > 0)
 	{
 		if (is_right_command(cmd))

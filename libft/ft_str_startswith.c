@@ -20,10 +20,10 @@ int		ft_str_startswith(const char *str, const char *start)
 	while (str[i] && start[i])
 	{
 		if (str[i] != start[i])
-			return (FT_FALSE);
+			return (FT_false);
 		i++;
 	}
 	if (start[i])
-		return (FT_FALSE);
-	return (FT_TRUE);
+		return (FT_false);
+	return (FT_true);
 }

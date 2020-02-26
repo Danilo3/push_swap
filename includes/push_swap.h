@@ -78,13 +78,13 @@ int						parse_arg(t_app *app, char *arg, int *value);
 
 int						parse_options(t_app *app, int argc, char **argv);
 
-void					print_values(t_stack *a_stack, t_stack *b_stack, const char *cmd);
+void					print_state(t_app *app, const char *cmd);
 
 void					add_to_stack(t_stack *stack, int value);
 
 void					free_stack(t_stack *stack);
 
-int						check_dup(t_stack *stack);
+int						check_is_dup(t_stack *stack);
 
 int						check_is_empty(t_stack *stack);
 

@@ -27,10 +27,10 @@ int			parse_precision(const char *format, t_spec *spec)
 	i = 0;
 	if (format[i] == '.')
 	{
-		spec->precision.is_dot = TRUE;
+		spec->precision.is_dot = true;
 		if (format[1] == '*')
 		{
-			spec->precision.is_asterisk = TRUE;
+			spec->precision.is_asterisk = true;
 			return (2);
 		}
 		else

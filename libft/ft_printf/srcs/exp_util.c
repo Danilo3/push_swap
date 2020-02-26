@@ -73,7 +73,7 @@ void	modify_g_buf(char *g, t_spec *spec)
 {
 	int i;
 
-	if ((spec->type != 'g' && spec->type != 'G') || spec->flags['#'] == TRUE)
+	if ((spec->type != 'g' && spec->type != 'G') || spec->flags['#'] == true)
 		return ;
 	i = (int)ft_strlen(g) - 1;
 	while (g[i] == '0')

@@ -39,7 +39,7 @@ void	init_app(t_app *app, int argc, char **argv)
 	i = 1;
 	if (argc == 1)
 		exit_app(app, "Error");
-	parse_options(app, argc, argv);
+	i += parse_options(app, argc, argv);
 	while (i < argc)
 	{
 		parse_arg(app, argv[i], &value);

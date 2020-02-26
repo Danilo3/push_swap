@@ -19,7 +19,7 @@ int		put_hex_prefix(const char *buf, t_spec *spec, char *dest)
 		put_or_copy(dest, HEX_SMALL_PREFIX);
 		return (2);
 	}
-	if (spec->flags['#'] == TRUE && buf[0] != '0')
+	if (spec->flags['#'] == true && buf[0] != '0')
 	{
 		if (spec->type == 'x')
 			put_or_copy(dest, HEX_SMALL_PREFIX);

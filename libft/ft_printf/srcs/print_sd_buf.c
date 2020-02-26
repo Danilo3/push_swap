@@ -51,7 +51,7 @@ int		print_sd_buf(char *digit, t_spec *spec)
 
 	i = 0;
 	sign = prepare_sd_buf(digit, spec);
-	if (spec->flags['-'] == TRUE)
+	if (spec->flags['-'] == true)
 	{
 		i += print_sign(sign);
 		i += fill_precision_field(digit, spec);

@@ -15,8 +15,8 @@
 char		get_str_fill_ch(t_spec *spec)
 {
 	if ((spec->type == 's' || spec->type == 'c') &&
-			spec->flags['0'] == TRUE &&
-			spec->flags['-'] == FALSE)
+			spec->flags['0'] == true &&
+			spec->flags['-'] == false)
 		return ('0');
 	else
 		return (' ');
@@ -30,7 +30,7 @@ int			fill_str_field(const char *str, t_spec *spec)
 
 	ch = get_str_fill_ch(spec);
 	if (spec->precision.value == -1)
-		i = (spec->precision.is_dot == TRUE ? 0 : (int)ft_strlen(str));
+		i = (spec->precision.is_dot == true ? 0 : (int)ft_strlen(str));
 	else
 	{
 		i = ft_min(spec->precision.value, (int)ft_strlen(str));
@@ -57,9 +57,9 @@ int			print_str(char *str, t_spec *spec)
 	ft_strcpy(null_str, NULL_STR);
 	if (!str)
 		str = null_str;
-	if (spec->flags['-'] == FALSE)
+	if (spec->flags['-'] == false)
 		i += fill_str_field(str, spec);
-	if (spec->precision.value == -1 && spec->precision.is_dot == FALSE)
+	if (spec->precision.value == -1 && spec->precision.is_dot == false)
 		i += print_buf(str);
 	else
 	{
@@ -69,7 +69,7 @@ int			print_str(char *str, t_spec *spec)
 			i++;
 		}
 	}
-	if (spec->flags['-'] == TRUE)
+	if (spec->flags['-'] == true)
 		i += fill_str_field(str, spec);
 	return (i);
 }

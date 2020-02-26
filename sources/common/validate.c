@@ -4,7 +4,7 @@
 
 #include "push_swap.h"
 
-int		check_dup(t_stack *stack)
+int		check_is_dup(t_stack *stack)
 {
 	t_stack_elem *current_i;
 	t_stack_elem *current_j;

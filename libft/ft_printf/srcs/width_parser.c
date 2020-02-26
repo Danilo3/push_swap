@@ -28,10 +28,10 @@ int		parse_width(const char *format, t_spec *spec)
 		return (0);
 	tmp = ft_strsub(format, 0, end);
 	if (format[0] == '*')
-		spec->width.is_asterisk = TRUE;
+		spec->width.is_asterisk = true;
 	else
 		spec->width.value = ft_atoi(tmp);
-	if (ft_isdigit(format[1]) && spec->width.is_asterisk == TRUE)
+	if (ft_isdigit(format[1]) && spec->width.is_asterisk == true)
 		spec->width.value = ft_atoi(tmp + 1);
 	free(tmp);
 	return (end);

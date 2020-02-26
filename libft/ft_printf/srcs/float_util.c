@@ -19,7 +19,7 @@ int			get_float_precision(t_spec *spec)
 
 char		get_float_fill_ch(t_spec *spec)
 {
-	if (spec->flags['0'] == TRUE && spec->flags['-'] == FALSE)
+	if (spec->flags['0'] == true && spec->flags['-'] == false)
 		return ('0');
 	else
 		return (' ');
@@ -35,7 +35,7 @@ int			is_float_null_case(char *f, t_spec *spec)
 {
 	if (ft_strcmp(f, "0.0") == 0 &&
 		spec->precision.value <= 0 &&
-		spec->precision.is_dot == TRUE)
+		spec->precision.is_dot == true)
 	{
 		ft_putchar('0');
 		return (1);

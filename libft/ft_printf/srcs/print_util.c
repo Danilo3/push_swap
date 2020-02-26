@@ -19,7 +19,7 @@ char	get_sign(char *digit, t_spec *spec)
 		ft_strcpy(digit, digit + 1);
 		return ('-');
 	}
-	else if (spec->flags['+'] == TRUE)
+	else if (spec->flags['+'] == true)
 		return ('+');
 	return ('\0');
 }

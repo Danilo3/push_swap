@@ -31,7 +31,7 @@ int		ft_print_p(t_spec *spec, va_list *args)
 	ft_bzero(buffer, MAX_P_BUFF_SIZE);
 	conv = (t_conv){16, 'a'};
 	get_general_ptr(args, &conv, spec, buffer);
-	spec->flags['#'] = TRUE;
+	spec->flags['#'] = true;
 	return (print_d_buf(buffer, spec, put_hex_prefix));
 }
 
