@@ -84,4 +84,4 @@ int						exec_commands(t_stack *stack_a, t_stack *stack_b, t_command_list *list)
 int						find_min(t_stack *stack);
 
 
-#endif //PUSH_SWAP_PUSH_SWAP_H
+#endif

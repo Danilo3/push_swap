@@ -24,7 +24,6 @@ int		check_dup(t_stack *stack)
 	return (0);
 }
 
-
 int		check_is_empty(t_stack *stack)
 {
 	if (!stack || stack->head == NULL)

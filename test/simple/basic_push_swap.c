@@ -15,7 +15,6 @@ t_stack	*make_stack(int arr[], int size)
 	return (stack);
 }
 
-
 int     check_apps(t_app *app1, t_app *app2)
 {
     return (check_stacks(app1->a, app2->a) && check_stacks(app1->b, app2->b);
