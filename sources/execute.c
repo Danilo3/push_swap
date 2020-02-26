@@ -42,5 +42,5 @@ int		exec_commands(t_stack *stack_a, t_stack *stack_b, t_command_list *list)
 		print_values(stack_a, stack_b, current->name);
 		current = current->next;
 	}
-	return (check_is_sorted(stack_a, ASCENDING));
+	return (check_is_sorted(stack_a, ASCENDING) && check_is_empty(stack_b));
 }

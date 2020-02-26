@@ -55,7 +55,7 @@ void					free_stack(t_stack *stack);
 
 int						check_dup(t_stack *stack);
 
-int						check_empty(t_stack *stack);
+int						check_is_empty(t_stack *stack);
 
 int						check_is_sorted(t_stack *stack, t_sort_order order);
 

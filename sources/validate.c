@@ -24,6 +24,14 @@ int		check_dup(t_stack *stack)
 	return (0);
 }
 
+
+int		check_is_empty(t_stack *stack)
+{
+	if (!stack || stack->head == NULL)
+		return (1);
+	return (0);
+}
+
 int		check_is_sorted(t_stack *stack, t_sort_order order)
 {
 	t_stack_elem	*current;
