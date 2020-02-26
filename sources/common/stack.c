@@ -32,7 +32,7 @@ void		add_to_stack(t_stack *stack, int value)
 	last = new;
 	while (new)
 		new = new->next;
-	new = (t_stack_elem*)malloc(sizeof(t_stack_elem));
+	new = ft_memalloc(sizeof(t_stack_elem));
 	new->value = value;
 	new->next = last;
 	new->prev = NULL;
@@ -58,35 +58,3 @@ void		free_stack(t_stack *stack)
 	}
 }
 
-void		print_header(const char *cmd)
-{
-	if (!cmd)
-		ft_putstr("Init a and b: \n");
-	else
-		ft_printf("Exec: %s\n", cmd);
-	ft_putstr("------A-----+-----B------\n");
-}
-
-void		print_values(t_stack *a_stack, t_stack *b_stack, const char *cmd)
-{
-	t_stack_elem *a;
-	t_stack_elem *b;
-
-	a = a_stack->head;
-	b = b_stack->head;
-	print_header(cmd);
-	while (a || b)
-	{
-		if (a && b)
-			ft_printf("|%11d|%11d|\n", a->value, b->value);
-		else if (a)
-			ft_printf("|%11d|%11c|\n", a->value, ' ');
-		else if (b)
-			ft_printf("|%11c|%11d|\n", ' ', b->value);
-		if (a)
-			a = a->next;
-		if (b)
-			b = b->next;
-	}
-	ft_putstr("------------+------------\n");
-}

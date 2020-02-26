@@ -208,7 +208,6 @@ typedef struct	s_ulldiv
 
 int				ft_printf(const char *fmt, ...);
 
-
 /*
  ** get_next_line
 */
@@ -216,5 +215,15 @@ int				ft_printf(const char *fmt, ...);
 # define BUFF_SIZE  3
 
 int				get_next_line(const int fd, char **line);
+
+/*
+ ** Boolean type
+*/
+
+typedef enum	e_bool
+{
+	false,
+	true
+}				t_bool;
 
 #endif

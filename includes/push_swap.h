@@ -48,14 +48,21 @@ typedef struct			s_command_list
 
 typedef struct          s_app
 {
-    t_stack *a;
-    t_stack *b;
+    t_stack			*a;
+    t_stack			*b;
+    t_command_list	*cmds;
+    t_bool			v_op;
+    t_bool 			c_op;
 }                       t_app;
 
 
 t_app                   *init_app(void);
 
 t_stack					*init_stack(void);
+
+void					add_values(int argc, char *argv);
+
+void					walk_commands(t_command_list *list, t_bool to_print, t_bool to_free);
 
 void					print_values(t_stack *a_stack, t_stack *b_stack, const char *cmd);
 
@@ -89,7 +96,7 @@ int 					reverse_rotate_x(t_stack *stack, t_command_list *list, const char *name
 
 int						reverse_rotate_rotate(t_stack *stack_a, t_stack *stack_b, t_command_list *list);
 
-int						exec_commands(t_stack *stack_a, t_stack *stack_b, t_command_list *list);
+int						exec_commands(t_app *app);
 
 int						find_min(t_stack *stack);
 

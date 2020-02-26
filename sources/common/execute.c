@@ -31,16 +31,17 @@ void 	exec(t_stack *stack_a, t_stack *stack_b, const char *cmd)
 		reverse_rotate_rotate(stack_a, stack_b, NULL);
 }
 
-int		exec_commands(t_stack *stack_a, t_stack *stack_b, t_command_list *list)
+int		exec_commands(t_app *app)
 {
 	t_command *current;
 
-	current = list->head;
+	current = app->cmds->head;
 	while (current)
 	{
-		exec(stack_a, stack_b, current->name);
-		print_values(stack_a, stack_b, current->name);
+		exec(app->a, app->b, current->name);
+		if (app->v_op)
+			print_values(app->a, app->b, current->name);
 		current = current->next;
 	}
-	return (check_is_sorted(stack_a, ASCENDING) && check_is_empty(stack_b));
+	return (check_is_sorted(app->a, ASCENDING) && check_is_empty(app->b));
 }
