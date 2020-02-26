@@ -14,9 +14,9 @@ void 	exec(t_stack *stack_a, t_stack *stack_b, const char *cmd)
 	else if (ft_strcmp(cmd, "ss") == 0)
 		swap_swap(stack_a, stack_b, NULL);
 	else if (ft_strcmp(cmd, "pa") == 0)
-		push_x(stack_a, stack_b, NULL, NULL);
-	else if (ft_strcmp(cmd, "pb") == 0)
 		push_x(stack_b, stack_a, NULL, NULL);
+	else if (ft_strcmp(cmd, "pb") == 0)
+		push_x(stack_a, stack_b, NULL, NULL);
 	else if (ft_strcmp(cmd, "ra") == 0)
 		rotate_x(stack_a, NULL, NULL);
 	else if (ft_strcmp(cmd, "rb") == 0)

@@ -14,6 +14,8 @@ int		push_swap()
 	print_state(app, NULL);
 	push_x(app->a, app->b, NULL, NULL);
 	print_state(app, "pb");
+	push_x(app->a, app->b, NULL, NULL);
+	print_state(app, "pb");
 	return (0);
 }
 

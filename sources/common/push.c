@@ -6,7 +6,7 @@ void		push_to_stack(t_stack *stack, t_stack_elem *elem)
 
 	tmp = stack->head;
 	stack->head = elem;
-	elem->next = (tmp ? tmp->next : NULL);
+	elem->next = tmp;
 }
 
 t_stack_elem	*pop_from_stack(t_stack *stack)
@@ -26,9 +26,12 @@ int 	push_x(t_stack *stack_a, t_stack *stack_b, t_command_list *list, const char
 	t_stack_elem	*temp;
 
 	temp = pop_from_stack(stack_a);
-	push_to_stack(stack_b, temp);
-	stack_a->size--;
-	stack_b->size++;
+	if (temp)
+	{
+		push_to_stack(stack_b, temp);
+		stack_a->size--;
+		stack_b->size++;
+	}
 	add_command(list, name);
 	return (1);
 }
