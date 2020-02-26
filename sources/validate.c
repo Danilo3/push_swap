@@ -30,7 +30,7 @@ int		check_is_sorted(t_stack *stack, t_sort_order order)
 	int 			prev_value;
 
 	if(!stack->head)
-		return (1);
+		return (0);
 	current = stack->head->next;
 	prev_value = stack->head->value;
 	while(current)

@@ -9,8 +9,6 @@
 
 #define MAX_CMD 11
 
-static	char *g_commands[MAX_CMD] = {"sa", "sb", "ss", "pa", "pb", "ra", "rb", "rr", "rra", "rrb", "rrr"};
-
 typedef struct			s_stack_elem
 {
 	int					value;
@@ -47,7 +45,7 @@ typedef struct			s_command_list
 
 }						t_command_list;
 
-void					init_stack(t_stack *stack);
+t_stack					*init_stack(void);
 
 void					print_values(t_stack *a_stack, t_stack *b_stack, const char *cmd);
 
@@ -56,6 +54,8 @@ void					add_to_stack(t_stack *stack, int value);
 void					free_stack(t_stack *stack);
 
 int						check_dup(t_stack *stack);
+
+int						check_empty(t_stack *stack);
 
 int						check_is_sorted(t_stack *stack, t_sort_order order);
 
@@ -81,7 +81,7 @@ int						reverse_rotate_rotate(t_stack *stack_a, t_stack *stack_b, t_command_lis
 
 int						exec_commands(t_stack *stack_a, t_stack *stack_b, t_command_list *list);
 
-
+int						find_min(t_stack *stack);
 
 
 #endif //PUSH_SWAP_PUSH_SWAP_H

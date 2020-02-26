@@ -1,14 +1,28 @@
-//
-// Created by Aletha Yellin on 18/02/2020.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checker.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ayellin <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/02/26 04:57:07 by ayellin           #+#    #+#             */
+/*   Updated: 2020/02/26 05:01:54 by ayellin          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft.h"
 #include <stdlib.h>
 
+char	*g_commands[MAX_CMD] = {
+	"sa", "sb", "ss", "pa",
+	"pb", "ra", "rb", "rr",
+	"rra", "rrb", "rrr"
+};
+
 int		ft_isnum(const char *s)
 {
-	long value;
+	long	value;
 
 	value = ft_atol(s);
 	if (value != 0 && value >= INT_MIN && value <= INT_MAX)
@@ -39,7 +53,7 @@ int		is_right_command(const char *cmd)
 int		check_commands(t_stack *stack_a, t_stack *stack_b)
 {
 	t_command_list	list;
-	char 			*cmd;
+	char			*cmd;
 
 	list.head = NULL;
 	print_values(stack_a, stack_b, NULL);
@@ -61,28 +75,28 @@ int		check_commands(t_stack *stack_a, t_stack *stack_b)
 
 int		main(int argc, char **argv)
 {
-	int i;
-	int v;
-	t_stack stack_a;
-	t_stack stack_b;
+	int		i;
+	int		v;
+	t_stack	*stack_a;
+	t_stack	*stack_b;
 
 	i = 1;
-	init_stack(&stack_a);
-	init_stack(&stack_b);
+	stack_a = init_stack();
+	stack_b = init_stack();
 	if (argc == 1)
 		ft_exit(NULL, "Error\n");
-	while(i < argc)
+	while (i < argc)
 	{
 		v = ft_isnum(argv[i]);
-		add_to_stack(&stack_a, v);
+		add_to_stack(stack_a, v);
 		i++;
 	}
-	if (check_dup(&stack_a) || !check_commands(&stack_a, &stack_b))
+	if (check_dup(stack_a) || !check_commands(stack_a, stack_b))
 	{
-		free_stack(&stack_a);
-		free_stack(&stack_b);
+		free_stack(stack_a);
+		free_stack(stack_b);
 		ft_exit(NULL, "Error\n");
 	}
-	free_stack(&stack_a);
-	free_stack(&stack_b);
+	free_stack(stack_a);
+	free_stack(stack_b);
 }

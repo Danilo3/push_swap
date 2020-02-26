@@ -31,7 +31,6 @@ void 	exec(t_stack *stack_a, t_stack *stack_b, const char *cmd)
 		reverse_rotate_rotate(stack_a, stack_b, NULL);
 }
 
-
 int		exec_commands(t_stack *stack_a, t_stack *stack_b, t_command_list *list)
 {
 	t_command *current;

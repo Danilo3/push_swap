@@ -31,3 +31,6 @@ set(SRC sources/stack.c
 add_executable(checker ${SRC} sources/checker.c)
 target_link_libraries(checker ft)
 
+
+add_executable(basic_test ${SRC} test/simple/basic_push_swap.c sources/push_swap.c)
+target_link_libraries(basic_test ft)
