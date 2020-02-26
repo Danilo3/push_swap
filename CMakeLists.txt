@@ -16,8 +16,7 @@ set(LIBFT_FILES ${LIBFT_FILES} ${LIBFT_ADD_FILES})
 add_library(ft STATIC ${LIBFT_FILES} ${PROJECT_SOURCE_DIR}/libft/ft_gnl/get_next_line.c)
 
 
-add_executable(push_swap sources/push_swap/push_swap.c)
-target_link_libraries(push_swap ft)
+
 
 set(SRC stack.c
         validate.c
@@ -34,8 +33,11 @@ list(TRANSFORM SRC PREPEND "sources/common/")
 add_executable(checker ${SRC} sources/checker/checker.c)
 target_link_libraries(checker ft)
 
+add_executable(push_swap ${SRC} sources/push_swap/push_swap.c)
+target_link_libraries(push_swap ft)
 
-add_executable(basic_test ${SRC} test/simple/basic_push_swap.c sources/push_swap/push_swap.c)
+
+add_executable(basic_test ${SRC} test/simple/basic_push_swap.c)
 target_link_libraries(basic_test ft)
 
 

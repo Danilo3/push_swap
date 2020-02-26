@@ -1,61 +1,68 @@
-//
-// Created by Aletha Yellin on 26/02/2020.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   arguments.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ayellin <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/02/27 00:30:49 by ayellin           #+#    #+#             */
+/*   Updated: 2020/02/27 00:30:58 by ayellin          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-int		parse_arg(t_app *app, char *arg, int *value)
+void		parse_values(t_app *app, int argc, char **argv)
 {
 	int		i;
-	long	v;
+	size_t	j;
+	int		value;
+	int		is_num;
 
-	i = 0;
-	while (arg[i])
-	{
-		if (ft_isdigit(arg[i]))
-		{
-			v = ft_atol(arg + i);
-			if (v <= INT_MAX && v >= INT_MIN)
-				*value = (int)v;
-			while (ft_isdigit(arg[i]))
-				i++;
-			continue;
-		}
-		else if (ft_isalpha(arg[i]))
-			exit_app(app, "Error");
-		else if (ft_isspace(arg[i]))
-			i++;
-	}
-	return (0);
-}
-
-int			parse_options(t_app *app, int argc, char **argv)
-{
-	int i;
-	int options;
-
-	i = 1;
-	options = 0;
+	i = 1 + app->v_op + app->c_op;
 	while (i < argc)
 	{
-		if (ft_isdigit(argv[i][0]))
-			return (options);
-		if ((ft_strcmp(argv[i], "-vc") == 0) || (ft_strcmp(argv[i], "-cv") == 0))
+		j = 0;
+		while (j < ft_strlen(argv[i]))
 		{
-			app->v_op = true;
-			app->c_op = true;
-			return (2);
-		}
-		else if (ft_strcmp(argv[i], "-c") == 0)
-		{
-			app->c_op = true;
-			options++;
-		}
-		else if (ft_strcmp(argv[i], "-v") == 0)
-		{
-			app->v_op = true;
-			options++;
+			if (ft_isdigit(argv[i][j]))
+			{
+				is_num = check_is_num(argv[i] + j, &value);
+				while (ft_isdigit(argv[i][j]))
+					j++;
+				if ((ft_isspace(argv[i][j]) || argv[i][j] == '\0') && is_num)
+				{
+					add_to_stack(app->a, value);
+					continue;
+				}
+			}
+			else if (ft_isalpha(argv[i][j]))
+				exit_app(app, "Error");
+			j++;
 		}
 		i++;
 	}
-	return (options);
+}
+
+void		parse_options(t_app *app, int argc, char **argv)
+{
+	int i;
+
+	i = 1;
+	while (i < argc)
+	{
+		if (ft_isdigit(argv[i][0]))
+			return ;
+		if ((ft_strcmp(argv[i], "-vc") == 0) ||
+		(ft_strcmp(argv[i], "-cv") == 0))
+		{
+			app->v_op++;
+			app->c_op++;
+		}
+		else if (ft_strcmp(argv[i], "-c") == 0)
+			app->c_op++;
+		else if (ft_strcmp(argv[i], "-v") == 0)
+			app->v_op++;
+		i++;
+	}
 }

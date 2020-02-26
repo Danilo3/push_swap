@@ -15,25 +15,6 @@ t_stack	*make_stack(int arr[], int size)
 	return (stack);
 }
 
-int     check_apps(t_app *app1, t_app *app2)
-{
-    return (check_stacks(app1->a, app2->a) && check_stacks(app1->b, app2->b);
-}
-
-int     check_stacks(t_stack *stack1, t_stack* stack2)
-{
-   
-   t_stack_elem *a;
-   t_stack_elem *b;
-
-   a = stack1->head;
-   b = stack2->head;
-   while (a || b)
-   {
-       
-   }
-}
-
 
 int		main()
 {
@@ -44,6 +25,5 @@ int		main()
 	a_stack = make_stack(test_arr, 5);
 	b_stack = init_stack();
 	ft_printf("min = %d\n", find_min(a_stack));
-	print_values(a_stack, b_stack, NULL);
 	free_stack(a_stack);
 }

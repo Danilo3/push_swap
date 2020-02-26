@@ -22,6 +22,7 @@ typedef struct			s_stack_elem
 typedef struct			s_stack
 {
 	t_stack_elem		*head;
+	t_stack_elem		*tail;
 	size_t				size;
 }						t_stack;
 
@@ -51,8 +52,8 @@ typedef struct          s_app
     t_stack			*a;
     t_stack			*b;
     t_command_list	*cmds;
-    t_bool			v_op;
-    t_bool 			c_op;
+    int				v_op;
+    int 			c_op;
 }                       t_app;
 
 
@@ -72,9 +73,9 @@ void					walk_commands(t_command_list *list, t_bool to_print, t_bool to_free);
 
 int						run_commands(t_app *app);
 
-int						parse_arg(t_app *app, char *arg, int *value);
+void					parse_values(t_app *app, int argc, char **argv);
 
-int						parse_options(t_app *app, int argc, char **argv);
+void					parse_options(t_app *app, int argc, char **argv);
 
 void					print_state(t_app *app, const char *cmd);
 
@@ -85,6 +86,8 @@ void					free_stack(t_stack *stack);
 int						check_is_dup(t_stack *stack);
 
 int						check_is_empty(t_stack *stack);
+
+int						check_is_num(char *arg, int *value);
 
 int						check_is_sorted(t_stack *stack, t_sort_order order);
 

@@ -33,19 +33,10 @@ t_app     *new_app(void)
 
 void	init_app(t_app *app, int argc, char **argv)
 {
-	int		i;
-	int 	value;
-
-	i = 1;
 	if (argc == 1)
 		exit_app(app, "Error");
-	i += parse_options(app, argc, argv);
-	while (i < argc)
-	{
-		parse_arg(app, argv[i], &value);
-		add_to_stack(app->a, value);
-		i++;
-	}
+	parse_options(app, argc, argv);
+	parse_values(app, argc, argv);
 }
 
 void	run_app(t_app *app)

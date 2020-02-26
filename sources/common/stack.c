@@ -20,6 +20,7 @@ t_stack		*init_stack()
 	new = ft_memalloc(sizeof(t_stack));
 	new->head = NULL;
 	new->size = 0;
+	new->tail = NULL;
 	return (new);
 }
 

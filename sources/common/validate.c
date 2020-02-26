@@ -24,6 +24,19 @@ int		check_is_dup(t_stack *stack)
 	return (0);
 }
 
+int		check_is_num(char *arg, int *value)
+{
+	long v;
+
+	v = ft_atol(arg);
+	if (v <= INT_MAX && v >= INT_MIN)
+	{
+		*value = (int)v;
+		return (1);
+	}
+	return (0);
+}
+
 int		check_is_empty(t_stack *stack)
 {
 	if (!stack || stack->head == NULL)

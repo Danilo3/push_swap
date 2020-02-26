@@ -6,8 +6,14 @@
 
 int		push_swap()
 {
-	ft_printf("Hello world");
+	t_app	*app;
+	char	*argv[] = {"lol", "1", "2", "3"};
 
+	app = new_app();
+	init_app(app, 4, argv);
+	print_state(app, NULL);
+	push_x(app->a, app->b, NULL, NULL);
+	print_state(app, "pb");
 	return (0);
 }
 
@@ -32,7 +38,7 @@ int		find_min(t_stack *stack)
 	return (id);
 }
 
-//int main()
-//{
-//	push_swap();
-//}
+int main()
+{
+	push_swap();
+}
