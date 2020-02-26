@@ -4,7 +4,6 @@
 
 #include "push_swap.h"
 #include <stdlib.h>
-#include <zlib.h>
 
 static char	*g_commands[MAX_CMD] = {
 		"sa", "sb", "ss", "pa",
@@ -28,7 +27,7 @@ int		is_right_command(const char *cmd)
 
 int			run_commands(t_app *app)
 {
-	char			*cmd;
+	char		*cmd;
 
 	if (app->v_op)
 		print_values(app->a, app->b, NULL);

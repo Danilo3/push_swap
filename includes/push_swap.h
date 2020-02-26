@@ -56,13 +56,27 @@ typedef struct          s_app
 }                       t_app;
 
 
-t_app                   *init_app(void);
+t_app					*new_app(void);
+
+void					init_app(t_app *app, int argc, char **argv);
+
+void					run_app(t_app *app);
+
+void					destroy_app(t_app *app);
 
 t_stack					*init_stack(void);
 
 void					add_values(int argc, char *argv);
 
+void					exit_app(t_app *app, const char *msg);
+
 void					walk_commands(t_command_list *list, t_bool to_print, t_bool to_free);
+
+int						run_commands(t_app *app);
+
+int						parse_arg(t_app *app, char *arg, int *value);
+
+int						parse_options(t_app *app, int argc, char **argv);
 
 void					print_values(t_stack *a_stack, t_stack *b_stack, const char *cmd);
 

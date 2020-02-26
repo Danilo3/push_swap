@@ -24,22 +24,6 @@ int		check_dup(t_stack *stack)
 	return (0);
 }
 
-int		check_is_num(const char *s)
-{
-	long	value;
-
-	value = ft_atol(s);
-	if (value != 0 && value >= INT_MIN && value <= INT_MAX)
-		return ((int)value);
-	while (s)
-	{
-		if (!ft_isdigit(*s))
-			ft_exit(NULL, "Error\n");
-		s++;
-	}
-	return (0);
-}
-
 int		check_is_empty(t_stack *stack)
 {
 	if (!stack || stack->head == NULL)

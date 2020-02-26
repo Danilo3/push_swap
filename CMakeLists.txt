@@ -25,9 +25,10 @@ set(SRC stack.c
         swap.c
         push.c
         solution.c
-        rotate_ops.c
+        rotate.c
         execute.c
-        app.c)
+        app.c
+        arguments.c)
 
 list(TRANSFORM SRC PREPEND "sources/common/")
 add_executable(checker ${SRC} sources/checker/checker.c)
