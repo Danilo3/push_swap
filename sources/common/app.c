@@ -15,9 +15,6 @@ t_app     *init_app(int argc, char **argv)
 }
 
 void	run_app(t_app *app)
-{
-
-}
 
 void    destroy_app(t_app *app)
 {
