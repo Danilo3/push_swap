@@ -87,7 +87,7 @@ int						check_is_dup(t_stack *stack);
 
 int						check_is_empty(t_stack *stack);
 
-int						check_is_num(char *arg, int *value);
+int						check_is_num(const char *arg, int *value);
 
 int						check_is_sorted(t_stack *stack, t_sort_order order);
 

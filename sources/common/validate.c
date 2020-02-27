@@ -24,10 +24,18 @@ int		check_is_dup(t_stack *stack)
 	return (0);
 }
 
-int		check_is_num(char *arg, int *value)
+int		check_is_num(const char *arg, int *value)
 {
-	long v;
+	long    v;
+    int     i;
 
+    i = 0;
+	while (arg[i])
+    {
+	    if (!ft_isspace(arg[i]) && !ft_isdigit(arg[i]))
+            return (0);
+	    i++;
+    }
 	v = ft_atol(arg);
 	if (v <= INT_MAX && v >= INT_MIN)
 	{

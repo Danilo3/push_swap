@@ -12,6 +12,26 @@
 
 #include "push_swap.h"
 
+/*
+ **  parse str returns 1 if was value, 0 if was error
+*/
+
+int         parse_int_arg(char *arg, int *value)
+{
+    long    long_value;
+
+    while (ft_isspace(*arg))
+        arg++;
+    if (ft_isdigit(*arg))
+    {
+        long_value = ft_atol(arg);
+        if (long_value >= INT_MIN && long_value <= INT_MIN)
+            return (*value = (int) long_value);
+    }
+    return (0);
+}
+
+
 void		parse_values(t_app *app, int argc, char **argv)
 {
 	int		i;
