@@ -131,6 +131,5 @@ if (result)																\
 	return (make_printf_msg(__FUNCTION_NAME__, message, fmt, result));	\
 } while (0)																\
 
-char* 	mu_check_two_stacks(t_stack *stack1, t_stack *stack2);
 
 #endif

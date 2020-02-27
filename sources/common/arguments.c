@@ -22,20 +22,23 @@ int		parse_int_arg(char **arg, int *value)
 	char	*str;
 
 	str = *arg;
-	if (!arg)
+	if (!str)
 		return (0);
 	while (ft_isspace(*str))
-		arg++;
-	if (ft_isdigit(*str))
+		str++;
+	if (ft_isdigit(*str) || *str == '-')
 	{
 		long_value = ft_atol(str);
+		str += (*str == '-' ? 1 : 0);
+		while (ft_isdigit(*str))
+			str++;
+		*arg = str;
 		if (long_value >= INT_MIN && long_value <= INT_MAX)
-			return ((*value = (int)long_value) || 1);
+			return ((*value = (int) long_value) || 1);
+		if (!ft_isspace(*str) || *str != '\0')
+			return (-1);
 	}
-	if (*arg == '\0')
-		return (0);
-	else
-		return (-1);
+	return (0);
 }
 
 void	parse_values(t_app *app, int argc, char **argv)
@@ -46,7 +49,7 @@ void	parse_values(t_app *app, int argc, char **argv)
 	int		is_num;
 
 	parse_int_arg(argv  + 1, &value);
-	parse_int_arg(argv  +2, &value);
+	parse_int_arg(argv  + 2, &value);
 	i = 1 + app->v_op + app->c_op;
 	while (i < argc)
 	{
