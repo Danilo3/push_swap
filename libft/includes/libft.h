@@ -212,7 +212,7 @@ int				ft_printf(const char *fmt, ...);
  ** get_next_line
 */
 
-# define BUFF_SIZE  3
+# define BUFF_SIZE  100
 
 int				get_next_line(const int fd, char **line);
 
@@ -225,5 +225,11 @@ typedef enum	e_bool
 	false,
 	true
 }				t_bool;
+
+/*
+ **		parse functions
+*/
+
+int				ft_parse_int_str(char **arg, int *next);
 
 #endif

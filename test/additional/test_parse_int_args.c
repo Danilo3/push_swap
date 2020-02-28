@@ -3,7 +3,7 @@
 //
 
 #include "minunit.h"
-#include "../sources/common/arguments.c"
+#include "libft.h"
 
 typedef struct s_test
 {
@@ -25,7 +25,7 @@ static char *test_simple()
 	t_test test;
 
 	test.str = strdup("1 2 3 4 5");
-	test.result = parse_int_arg(&test.str, &test.value);
+	test.result = ft_parse_int_str(&test.str, &test.value);
 
 	assert_test(&test, " 2 3 4 5", 1, 1);
 	return (0);

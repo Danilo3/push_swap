@@ -12,34 +12,7 @@
 
 #include "push_swap.h"
 
-/*
- **  parse str returns 1 if was value, 0 !arg, -1 if error
-*/
 
-int		parse_int_arg(char **arg, int *value)
-{
-	long	long_value;
-	char	*str;
-
-	str = *arg;
-	if (!str)
-		return (0);
-	while (ft_isspace(*str))
-		str++;
-	if (ft_isdigit(*str) || *str == '-')
-	{
-		long_value = ft_atol(str);
-		str += (*str == '-' ? 1 : 0);
-		while (ft_isdigit(*str))
-			str++;
-		*arg = str;
-		if (long_value >= INT_MIN && long_value <= INT_MAX)
-			return ((*value = (int) long_value) || 1);
-		if (!ft_isspace(*str) || *str != '\0')
-			return (-1);
-	}
-	return (0);
-}
 
 void	parse_values(t_app *app, int argc, char **argv)
 {
@@ -48,8 +21,8 @@ void	parse_values(t_app *app, int argc, char **argv)
 	int		value;
 	int		is_num;
 
-	parse_int_arg(argv  + 1, &value);
-	parse_int_arg(argv  + 2, &value);
+	ft_parse_int_str(argv  + 1, &value);
+	ft_parse_int_str(argv  + 2, &value);
 	i = 1 + app->v_op + app->c_op;
 	while (i < argc)
 	{
