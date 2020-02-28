@@ -12,8 +12,6 @@
 
 #include "push_swap.h"
 
-
-
 void	parse_values(t_app *app, int argc, char **argv)
 {
 	int		i;

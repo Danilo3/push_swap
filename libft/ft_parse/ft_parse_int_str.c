@@ -34,10 +34,12 @@ int		ft_parse_int_str(char **arg, int *next)
 		while (ft_isdigit(*str))
 			str++;
 		*arg = str;
+		if (!ft_isspace(*str) && *str != '\0')
+			return (-1);
 		if (long_value >= INT_MIN && long_value <= INT_MAX)
 			return ((*next = (int)long_value) || 1);
-		if (!ft_isspace(*str) || *str != '\0')
-			return (-1);
 	}
+	if (!ft_isspace(*str))
+		return (-1);
 	return (0);
 }
